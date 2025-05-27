@@ -610,13 +610,13 @@ def parse_unified_diff(text):
                 if len(h.group(2)) > 0:
                     old_len = int(h.group(2))
                 else:
-                    old_len = 0
+                    old_len = 1
 
                 new = int(h.group(3))
                 if len(h.group(4)) > 0:
                     new_len = int(h.group(4))
                 else:
-                    new_len = 0
+                    new_len = 1
 
                 h = None
                 break

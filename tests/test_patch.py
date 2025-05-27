@@ -870,6 +870,7 @@ class PatchTestSuite(unittest.TestCase):
         text_diff = "\n".join(text.splitlines()[2:]) + "\n"
 
         expected = [
+            (1, 1, "The Nameless is the origin of Heaven and Earth;"),
             (None, 2, "The named is the mother of all things."),
         ]
 

@@ -68,6 +68,13 @@ class ApplyTestSuite(unittest.TestCase):
         self.assertEqual(_apply(self.abc, diff_text), self.efg)
         self.assertEqual(_apply_r(self.efg, diff_text), self.abc)
 
+    def test_diff_unified2_bad_context(self):
+        with open("tests/casefiles/diff-unified2.diff") as f:
+            diff_text = f.read()
+
+        with pytest.raises(exceptions.ApplyException):
+            _apply(["WRONG"], diff_text)
+
     def test_diff_unified_bad(self):
         with open("tests/casefiles/diff-unified-bad.diff") as f:
             diff_text = f.read()
